@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Edit product</title>
+    <link rel="stylesheet" href="/static/Total-Confusion.css">
+  </head>
+  <body>
+      <div id="main">
+
+
+          <form name="info" method="post" action="http://localhost:8080/api/products/">
+              <input type="hidden" id="id" class="form_input" name="name" value="{{data.product.key.id()}}"><br />
+
+            <div class="input">
+                <input type="text" id="name" class="form_input" name="name" value="{{data.product.name}}"><br />
+                <div id="name_error"></div>
+            </div>
+
+            <div class="input">
+                <input type="text" id="price" class="form_input" name="price" value="{{data.product.price}}"><br />
+                <div id="price_error"></div>
+            </div>
+
+            <div class="input">
+                <input type="text" id="size" class="form_input" name="size" value="{{data.product.size}}"><br />
+                <div id="size_error"></div>
+            </div>
+
+            <div class="input">
+                <input type="text" id="image" class="form_input" name="image" value="{{data.product.image}}"><br />
+                <div id="image_error"></div>
+            </div>
+
+
+            <div class="input">
+              <select name="category" id="category">
+                <option value={{data.product.category}} hidden>{{data.product.category}}</option>
+                <option value="Men">Men</option>
+                <option value="Women">Women</option>
+                <option value="Children">Children</option>
+              </select>
+              <div id="category_error"></div>
+            </div>
+        </div>
+
+
+            <a href="/admin/edit/{{ data.product.key.id() }}/">
+                <input type="button" id="save_button" value="Save">
+            </a>
+          </form>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src = "/static/edit.js"></script>
+  </body>
+</html>

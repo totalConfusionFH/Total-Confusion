@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Total Confusion Fashion House - Products</title>
+        <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="/static/Total-Confusion.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+    <body>
+        <div id="wrap">
+
+            <!-- <div class="navibar" id="myNavibar">
+              <a href="http://localhost:8080/">Logo</a>
+              <a href="http://localhost:8080/categories/" id="categories" class="dropdown">
+                  <span>Categories</span>
+                  <div class="dropdown-content">
+                    <a href="#">Men</a>
+                    <a href="#">Women</a>
+                    <a href="#">Children</a>
+                  </div>
+              </a>
+              <a href="#contact">About Us</a>
+              <a href="#about">Contact</a>
+              <a href="#" id="hamburger">&#9776;</a>
+            </div> -->
+
+            <div class="navibar" id="myNavibar">
+            <ul>
+               <li><a href="http://localhost:8080/"><span>Logo</span></a></li>
+
+               <li class="hide" id="men">
+                   <a href="http://localhost:8080/categories/men/"><span>Men</span></a>
+               </li>
+               <li class="hide" id="women">
+                   <a href="http://localhost:8080/categories/women/"><span>Women</span></a>
+               </li>
+               <li class="hide" id="children">
+                  <a href="http://localhost:8080/categories/children/"><span>Children</span></a>
+               </li>
+
+               <li class='hide active has-sub cat' id="category">
+                   <a href="http://localhost:8080/categories/" id="categories"><span>Categories</span></a>
+                  <ul>
+                     <li class='has-sub'>
+                         <a href="http://localhost:8080/categories/men/">
+                             <span>Men</span>
+                         </a>
+                     </li>
+                     <li class='has-sub'>
+                         <a href="http://localhost:8080/categories/women/">
+                             <span>Women</span>
+                         </a>
+                     </li>
+                     <li class='has-sub'>
+                         <a href="http://localhost:8080/categories/children/">
+                             <span>Children</span>
+                         </a>
+                     </li>
+                     <li class='has-sub'>
+                         <a href="http://localhost:8080/products/">
+                             <span>All Products</span>
+                         </a>
+                     </li>
+
+                  </ul>
+               </li>
+
+
+
+               <li class="hide"><a href='#'><span>About Us</span></a></li>
+               <li class='hide last'><a href='#'><span>Contact</span></a></li>
+            </ul>
+            <a href="#" id="hamburger">&#9776;</a>
+            </div>
+
+
+
+
+            <div class="container">
+                <div class="row">
+
+                    {% for product in data.products %}
+
+                        <div class="col-auto col-lg-4">
+                            <a href="/products/{{ product.key.id() }}/" class="product">
+                                <p>{{ product.name }}</p>
+                                <img src="{{ product.image }}" alt="" class="image">
+
+                            </a>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src = "../static/Total-Confusion.js"></script>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Categories</title>
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/Total-Confusion.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+  <body>
+      <div id="wrap">
+
+          <div class="navibar" id="myNavibar">
+          <ul>
+             <li><a href="http://localhost:8080/"><span>Logo</span></a></li>
+             <li class='active has-sub'>
+                 <a href="http://localhost:8080/categories/" id="categories"><span>Categories</span></a>
+                <ul>
+                   <li class='has-sub'>
+                       <a href="http://localhost:8080/categories/men/">
+                           <span>Men</span>
+                       </a>
+                   </li>
+                   <li class='has-sub'>
+                       <a href="http://localhost:8080/categories/women/">
+                           <span>Women</span>
+                       </a>
+                   </li>
+                   <li class='has-sub'>
+                       <a href="http://localhost:8080/categories/children/">
+                           <span>Children</span>
+                       </a>
+                   </li>
+                   <li class='has-sub'>
+                       <a href="http://localhost:8080/products/">
+                           <span>All Products</span>
+                       </a>
+                   </li>
+
+                </ul>
+             </li>
+             <li><a href='#'><span>About Us</span></a></li>
+             <li class='last'><a href='#'><span>Contact</span></a></li>
+          </ul>
+          <a href="#" id="hamburger">&#9776;</a>
+          </div>
+
+
+
+          <div class="category_box">
+              <div id="select_cat">
+                  Select Category:
+              </div>
+              <ul>
+                  <li>
+                      <a href="http://localhost:8080/categories/men/">
+                          <input type="button" id="Men" value="Men">
+                      </a>
+                  </li>
+                  <li>
+                      <a href="http://localhost:8080/categories/women/">
+                          <input type="button" id="Women" value="Women">
+                      </a>
+                  </li>
+                  <li>
+                      <a href="http://localhost:8080/categories/children/">
+                          <input type="button" id="Children" value="Children">
+                      </a>
+                  </li>
+                  <li>
+                      <a href="http://localhost:8080/products/">
+                          <input type="button" id="Men" value="All Products">
+                      </a>
+                  </li>
+
+
+              </ul>
+
+
+
+
+          </div>
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src = "/static/Total-Confusion.js"></script>
+  </body>
+</html>
