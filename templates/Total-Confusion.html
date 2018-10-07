@@ -1,95 +1,12 @@
 <!DOCTYPE HTML>
-<html>
-    <head>
-        <title>Total Confusion Fashion House</title>
-        <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="/static/Total-Confusion.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    </head>
-    <body>
-        <div id="wrap">
+{% extends "base.html" %}
+
+<title>{%block title%} Total Confusion Fashion House {% endblock %}</title>
+
+{% block content %}
+<div class="">
+    Home page - needs a layout
 
 
-            <div class="navibar" id="myNavibar">
-              <a href="http://localhost:8080/" class="active">Logo</a>
-              <a href="http://localhost:8080/categories/">Categories</a>
-              <a href="#contact">About Us</a>
-              <a href="#about">Contact</a>
-              <a href="#" id="hamburger">&#9776;</a>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <a href="#" class="product">
-                            <p></p>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <a href="#" class="product">
-                            <p></p>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <a href="#" class="product">
-                            <p></p>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <a href="#" class="product">
-                            <p></p>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <a href="#" class="product">
-                            <p></p>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <a href="#" class="product">
-                            <p></p>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <a href="#" class="product">
-                            <p></p>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <a href="#" class="product">
-                            <p></p>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <a href="#" class="product">
-                            <p></p>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <a href="#" class="product">
-                            <p></p>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <a href="#" class="product">
-                            <p></p>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <a href="#" class="product">
-                            <p></p>
-                        </a>
-                    </div>
-            </div>
-        </div>
-
-
-
-
-
-
-        </div>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-        <script src = "../static/Total-Confusion.js"></script>
-    </body>
-</html>
+</div>
+{% endblock %}
