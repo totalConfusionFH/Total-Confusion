@@ -1,3 +1,6 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+
 body{
     margin: 0;
 }
@@ -20,7 +23,6 @@ ul{
 }
 /* Navigation bar start*/
 
-
 .navibar ul,
 .navibar li,
 .navibar span,
@@ -37,6 +39,7 @@ ul{
   background: #141414;
   background: linear-gradient(to bottom, #d5d5d5 0%, white 100%);
   width: auto;
+  height: 45px;
 }
 
 .navibar:after,
@@ -64,26 +67,11 @@ ul{
   color: #ffffff;
   font-size: 12px;
 }
-/*
-.navibar > ul > li:hover:after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 5px solid black;
-  margin-left: -10px;
-}
- */
+
 .navibar > ul > li.active > a{
   color: #ffffff;
   border-bottom: 1px solid black;
 }
-
 
 .navibar > ul > li:hover > a {
     background: white;
@@ -93,10 +81,6 @@ ul{
   z-index: 1;
 }
 
-/* .navibar .has-sub:hover > ul {
-  display: block;
-} */
-
 .navibar .has-sub ul {
   display: none;
   position: absolute;
@@ -104,7 +88,6 @@ ul{
   top: 100%;
   left: 0;
 }
-
 
 .navibar .has-sub ul li a {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -117,17 +100,11 @@ ul{
   padding: 10px;
   color: black;
 }
-/*
-.navibar .has-sub ul li:hover a {
-  background: white;
-  border-bottom: 1px solid #888888;
-} */
 
 .active {
     box-shadow: inset 0 -1px black;
     color: white;
 }
-
 
 
 #hamburger {
@@ -140,6 +117,11 @@ ul{
       display: none;
     }
 
+    .navibar {
+        z-index: 1;
+    }
+
+
     #hamburger {
         float: right;
         display: block;
@@ -148,13 +130,9 @@ ul{
         top: 0;
     }
 
-    #category {
+    #nav_category {
         display: none;
     }
-
-    /* #men, #women, #children{
-        display: block;
-    } */
 
 
     .navibar.responsive {
@@ -170,11 +148,6 @@ ul{
 
 }
 
-
-
-
-
-
 @media screen and (min-width: 600px) {
     .navibar .has-sub:hover > ul {
       display: block;
@@ -185,20 +158,19 @@ ul{
       border-bottom: 1px solid #888888;
     }
 
-    #men, #women, #children{
+    #men, #women, #children, #all_products{
         display: none;
     }
 
 }
 
+/* Navigation bar end */
 
-
-.cat_hide {
+.min_height_div{
+    min-height: 63vh;
 }
 
-
-/* Navigaation bar end */
-
+/* Products Start*/
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
 .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
 .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md,
@@ -214,7 +186,12 @@ ul{
     width: 100%;
     height: 400px;
     padding: 1%;
+    color: inherit;
+}
 
+.product:hover{
+    color: inherit;
+    text-align: none;
 }
 
 .product p{
@@ -234,13 +211,52 @@ ul{
     padding: 5%;
 }
 
+/* Products End*/
+
+/*About Start*/
+
+.about {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 60%;
+    font-size: 18px;
+}
+
+.linda {
+    align-content: center;
+    width: 300px;
+    height: 300px;
+    background-image: url("http://localhost:8080/static/pic_001.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*About End*/
+
+/*Contact Details Start*/
+
+
+.contact_details {
+    text-align: center;
+    margin: 50px auto;
+}
+
+#contactMap {
+    display: block;
+    border: 0;
+    width: 500px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+/*Contact Details End*/
 
 /*Form Start*/
 
-.form_input {
+.form_input, .form_fill, .form_error {
     border-width: 2px;
     border-style: solid;
-    border-color: #989898;
     width: 200px;
     line-height: 40px;
     color: black;
@@ -250,36 +266,18 @@ ul{
     margin: 20px;
     display: block;
     border-radius: 4px;
+}
+
+.form_input {
+    border-color: #989898;
 }
 
 .form_fill {
-    border-width: 2px;
-    border-style: solid;
     border-color: #316ce3;
-    width: 200px;
-    line-height: 40px;
-    color: black;
-    padding: 0 12px;
-    font-size: 16px;
-    outline: none;
-    margin: 20px;
-    display: block;
-    border-radius: 4px;
 }
 
 .form_error {
-    border-width: 2px;
-    border-style: solid;
     border-color: #f07979;
-    width: 200px;
-    line-height: 40px;
-    color: black;
-    padding: 0 12px;
-    font-size: 16px;
-    outline: none;
-    margin: 20px;
-    display: block;
-    border-radius: 4px;
 }
 
 .form_error::placeholder {
@@ -315,7 +313,7 @@ ul{
     position: relative;
 }
 
-#name_error, #price_error, #size_error, #image_error {
+#name_error, #price_error, #size_error, #image_error, #category_error {
     font-family: helvetica;
     position: absolute;
     left: 270px;
@@ -324,9 +322,6 @@ ul{
 }
 
 #category_error {
-    font-family: helvetica;
-    position: absolute;
-    left: 270px;
     bottom: 10px;
     color: red;
 }
@@ -344,7 +339,6 @@ select {
     font-size: 16px;
     outline: none;
     margin: 20px;
-    /* display: block; */
     border-radius: 4px;
 }
 
@@ -355,18 +349,6 @@ select {
 #edit_box{
     text-align: center;
 }
-
-/* #edit{
-    background-image: linear-gradient(to bottom,#d5d5d5,white);
-    position: relative;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-#edit:hover{
-    background-image: none;
-    background-color: #d5d5d5;
-} */
 
 #edit {
     width: 120px;
@@ -385,7 +367,6 @@ select {
     background-color: #d5d5d5;
     border-bottom: 1.5px solid black;
 }
-
 
 @media screen and (max-width: 600px) {
     #edit_box{
@@ -425,10 +406,195 @@ select {
     border-bottom: 1px solid black;
 }
 
-
-
 a.category_list {
     margin: 0px;
 }
 
 /*Categories Page End*/
+
+/*Footer Start*/
+
+
+.footer{
+    background-color: #d5d5d5;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	padding: 45px 50px;
+	margin-top: 80px;
+}
+
+.footer-nav, .footer-contact, .footer-social{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.footer-nav{
+	width: 30%;
+}
+
+.footer-logo{
+    font: normal 26px 'Cookie', cursive;
+}
+
+.footer-links{
+	margin: 20px 0 ;
+	padding: 0;
+}
+
+.footer-links a {
+    font-size: 18px;
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color: inherit;
+}
+
+#copyright{
+	font-size: 12px;
+	font-weight: normal;
+	margin: 0;
+}
+
+
+.footer-contact {
+	width: 35%;
+}
+
+.footer-contact i{
+    cursor: pointer;
+	font-size: 25px;
+	width: 39px;
+	height: 39px;
+	text-align: center;
+	line-height: 22px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+i.fa-map-marker, i.fa-envelope-o, i.fa-phone {
+    color: black;
+
+}
+
+i.fa-envelope {
+    color: black;
+	font-size: 18px;
+	line-height: 18px;
+}
+
+.footer-contact p{
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+}
+
+.footer-contact p span {
+	display:block;
+}
+
+#footer-email {
+	color:  #5383d3;
+	text-decoration: none;
+}
+
+.footer-social {
+    width: 33%;
+}
+
+#footerMap {
+    border: 0;
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+}
+
+/* .footer-social iframe {
+    border: 0;
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    filter: grayscale(100%);
+} */
+
+.social-links{
+	margin-top: 15px;
+}
+
+.social-links a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+.fa {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 30px;
+    width: 35px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+}
+
+.fa-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+@media (max-width: 1100px) {
+
+	.footer {
+        padding: 45px 25px;
+	}
+
+    .footer-nav {
+        width: 33%;
+	}
+
+    .footer-social {
+        width: 30%;
+	}
+
+}
+
+@media (max-width: 880px) {
+
+	.footer-nav, .footer-contact, .footer-social {
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-contact i{
+		margin-left: 0;
+	}
+
+}
+
+
+
+
+
+/*Footer End*/

@@ -7,9 +7,8 @@
   <body>
       <div id="main">
 
-
           <form name="info" method="post" action="http://localhost:8080/api/products/">
-              <input type="hidden" id="id" class="form_input" name="name" value="{{data.product.key.id()}}"><br />
+              <input type="hidden" id="id" class="form_input" name="id" value="{{data.product.key.id()}}"><br />
 
             <div class="input">
                 <input type="text" id="name" class="form_input" name="name" value="{{data.product.name}}"><br />
@@ -31,24 +30,24 @@
                 <div id="image_error"></div>
             </div>
 
-
             <div class="input">
               <select name="category" id="category">
                 <option value={{data.product.category}} hidden>{{data.product.category}}</option>
+                <option value="None">Uncategorised</option>
                 <option value="Men">Men</option>
                 <option value="Women">Women</option>
                 <option value="Children">Children</option>
               </select>
               <div id="category_error"></div>
             </div>
-        </div>
+
 
 
             <a href="/admin/edit/{{ data.product.key.id() }}/">
                 <input type="button" id="save_button" value="Save">
             </a>
           </form>
-
+      </div>
 
 
 

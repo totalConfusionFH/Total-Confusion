@@ -4,16 +4,6 @@ from flask import Flask, render_template, request
 
 from google.appengine.ext import ndb
 import json
-from decimal import Decimal, ROUND_HALF_UP, getcontext
-
-# Polish page up
-# Ginger include to edit multiple pages at a time (in the html pages)
-        #            {% include "" %}
-
-# Decimal to 2 fixed positions
-# Category selected #
-# Mobile view - absolutly position menu so page does not slide down, rather menu appears over page
-
 
 
 app = Flask(__name__)
@@ -27,10 +17,17 @@ class Product(ndb.Model):
     category = ndb.StringProperty()
 
 
+@app.route('/base/')
+def base():
+    print "id"
+    return render_template('base.html')
+
+
 @app.route('/')
 def home():
     print "id"
     return render_template('Total-Confusion.html')
+
 
 @app.route('/products/')
 def products():
@@ -49,6 +46,7 @@ def product(id):
     return render_template('product.html', data = {
         "product" : product
     })
+
 
 @app.route('/categories/')
 def categories():
@@ -70,10 +68,12 @@ def admin():
     print "id"
     return render_template('/admin.html')
 
+
 @app.route('/admin/products/')
 def admin_products():
     print "id"
     return render_template('admin/admin_products.html')
+
 
 @app.route('/admin/products/form/')
 def info_form():
@@ -84,13 +84,9 @@ def info_form():
 @app.route('/api/products/', methods=['POST'])
 def post():
     content = request.get_json()
-    x = Decimal(content.get('price'))
-    print x
-    price = Decimal(x.quantize(Decimal('.01'), rounding=ROUND_HALF_UP))
-    print price
     product = Product(
         name=content.get('name'),
-        price=float(price),
+        price=float(content.get('price')),
         size=int(content.get('size')),
         image=content.get('image'),
         category=content.get('category')
@@ -102,10 +98,6 @@ def post():
     return ""
 
 
-
-
-
-
 @app.route('/admin/edit/<id>/')
 def edit(id):
     key = ndb.Key(Product, int(id))
@@ -114,6 +106,7 @@ def edit(id):
     return render_template('edit.html', data = {
         "product" : product
     })
+
 
 @app.route('/api/products/<id>/', methods=['POST'])
 def post_changes(id):
@@ -130,22 +123,13 @@ def post_changes(id):
     print product
     return ""
 
+@app.route('/about/')
+def about():
+    print "id"
+    return render_template('about.html')
 
 
-# @app.route('/form/')
-# def form():
-#     return render_template('form.html')
-#
-# @app.route('/submitted/', methods=['POST'])
-# def submitted_form():
-#     name = request.form['name']
-#     email = request.form['email']
-#     site = request.form['site_url']
-#     comments = request.form['comments']
-#
-#     return render_template(
-#         'submitted_form.html',
-#         name=name,
-#         email=email,
-#         site=site,
-#         comments=comments)
+@app.route('/contact/')
+def contact():
+    print "id"
+    return render_template('contact.html')

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>{%block title%} Base Nav Structure {% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="/static/Total-Confusion.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div id="wrap">
+
+            <div class="navibar" id="myNavibar">
+            <ul>
+               <li><a href="http://localhost:8080/"><span>Logo</span></a></li>
+
+               <li class='hide has-sub cat' id="nav_category">
+                   <a href="http://localhost:8080/categories/" id="categories"><span>Categories</span></a>
+                  <ul>
+                     <li class='has-sub'>
+                         <a href="http://localhost:8080/categories/men/">
+                             <span>Men</span>
+                         </a>
+                     </li>
+                     <li class='has-sub'>
+                         <a href="http://localhost:8080/categories/women/">
+                             <span>Women</span>
+                         </a>
+                     </li>
+                     <li class='has-sub'>
+                         <a href="http://localhost:8080/categories/children/">
+                             <span>Children</span>
+                         </a>
+                     </li>
+                     <li class='has-sub'>
+                         <a href="http://localhost:8080/products/">
+                             <span>All Products</span>
+                         </a>
+                     </li>
+
+                  </ul>
+               </li>
+
+               <li class="hide" id="men">
+                   <a href="http://localhost:8080/categories/men/"><span>Men</span></a>
+               </li>
+               <li class="hide" id="women">
+                   <a href="http://localhost:8080/categories/women/"><span>Women</span></a>
+               </li>
+               <li class="hide" id="children">
+                  <a href="http://localhost:8080/categories/children/"><span>Children</span></a>
+               </li>
+               <li class="hide" id="all_products">
+                  <a href="http://localhost:8080/products/"><span>All products</span></a>
+               </li>
+
+
+               <li class="hide"><a href="http://localhost:8080/about/"><span>About Us</span></a></li>
+               <li class='hide last'><a href="http://localhost:8080/contact/"><span>Contact</span></a></li>
+            </ul>
+            <a href="#" id="hamburger">&#9776;</a>
+            </div>
+
+        <div class="min_height_div">
+            {% block content %}
+
+            <div class="" id="east">
+
+            </div>
+
+            {% endblock %}
+
+        </div>
+
+
+        <footer class="footer">
+
+			<div class="footer-nav">
+
+				<h3 class="footer-logo">Logo</h3>
+
+				<p class="footer-links">
+					<a href="http://localhost:8080/">Home</a>
+					·
+					<a href="http://localhost:8080/categories/">Categories</a>
+					·
+					<a href="http://localhost:8080/about/">About</a>
+					·
+					<a href="http://localhost:8080/contact/">Contact</a>
+				</p>
+
+                <p id="copyright"> Copyright &copy 2018 Total Confusion. All rights reserved.</p>
+			</div>
+
+			<div class="footer-contact">
+
+				<div>
+					<a href="https://www.google.co.za/maps/place/Beacon+Bay+Retail+Park/@-32.9696997,27.9444288,15.06z/data=!4m8!1m2!2m1!1sbeacon+bay+east+london!3m4!1s0x1e671ffba482a965:0x9dd437ddf6be18e8!8m2!3d-32.9549422!4d27.9328103"><i class="fa fa-map-marker"></i></a>
+					<p><span>17 Something Street</span> East London, South Africa</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>021 783 7803</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:totalconfusion@gmail.com" id="footer-email">totalconfusion@gmail.com</a></p>
+				</div>
+
+			</div>
+
+
+            <div class="footer-social">
+
+                <div id="footerMap">
+                </div>
+
+
+
+                <!-- <iframe
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDK_coA5cMEk-h1I9yzr_1LECbxMoB-qMY&q=beacon+bay+east+london" allowfullscreen>
+                </iframe> -->
+
+              <div class="social-links">
+
+                  <a href="https://www.facebook.com/linda.sithole.1000"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-linkedin"></i></a>
+                  <a href="#"><i class="fa fa-instagram"></i></a>
+
+              </div>
+
+
+            </div>
+
+
+		</footer>
+
+
+        </div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK_coA5cMEk-h1I9yzr_1LECbxMoB-qMY"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src = "/static/Total-Confusion.js"></script>
+    </body>
+</html>

@@ -1,4 +1,3 @@
-
 $(window).on("load", function() {
 
     console.log("window loaded");
@@ -18,9 +17,6 @@ $(window).on("load", function() {
         return false;
 
     };
-
-    var category = document.getElementById('category').value;
-    console.log(category);
 
     var update = function(){
 
@@ -72,10 +68,6 @@ $(window).on("load", function() {
         document.getElementById('price_error').innerHTML = '';
     });
 
-    // 
-    // double d = 56.7890
-    // BigDecimal db = new BigDecimal(d).setScale(12, BigDecimal.ROUND_HALF_UP);
-    // console.log();
 
     document.getElementById('size').addEventListener('blur', function(){
         var size = document.getElementById('size').value;
@@ -137,6 +129,22 @@ $(window).on("load", function() {
         document.getElementById('category_error').innerHTML = '';
     });
 
+
+    var selected = function(){
+
+        var category = document.getElementById('category');
+
+        for (var i = 1; i < category.options.length; i++) {
+
+          if (category.value == category.options[i].value) {
+            category.options[i].setAttribute("selected", "selected");
+          }
+
+        }
+
+    };
+
+    selected()
 
 
     document.querySelectorAll("form[name = 'info'] input").forEach((el) => {
