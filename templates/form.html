@@ -1,26 +1,90 @@
+<!DOCTYPE HTML>
 <html>
   <head>
-    <title>Submit a form</title>
-   <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <title>Submit product information</title>
+    <link rel="stylesheet" href="/static/Total-Confusion.css">
   </head>
   <body>
-    <div id="container">
-      <div class="pagetitle">
-        <h1>Submit a form</h1>
-      </div>
       <div id="main">
-        <form method="post" action="{{ url_for('submitted_form') }}">
-          <label for="name">Name:</label>
-          <input type="text" name="name"><br />
-          <label for="email">Email address:</label>
-          <input type="email" name="email"><br />
-          <label for="site_url">Website URL:</label>
-          <input type="url" name="site_url"><br />
-          <label for="comments">Comments:</label>
-          <textarea name="comments"></textarea><br />
-          <input type="submit">
-        </form>
+          <form name="info" method="post" action="http://localhost:8080/api/products/">
+
+            <div class="input">
+                <input type="text" id="name" class="form-input" name="name" placeholder="Name"><br />
+                <div id="name-error"></div>
+            </div>
+
+            <div class="input">
+                <input type="text" id="price" class="form-input" name="price" placeholder="Price"><br />
+                <div id="price-error"></div>
+            </div>
+
+
+            <div class="input">
+              <span class="select-size">Select available sizes:</span><br>
+              <label name="" class="size-label">28
+                <input type="checkbox" id="check28" name="size" class="size-checkbox" value="28">
+                <span class="checkmark"></span>
+              </label>
+
+              <label name="" class="size-label">30
+                <input type="checkbox" id="check30" name="size" class="size-checkbox" value="30">
+                <span class="checkmark"></span>
+              </label>
+
+              <label name="" class="size-label">32
+                <input type="checkbox" id="check32" name="size" class="size-checkbox" value="32">
+                <span class="checkmark"></span>
+              </label>
+
+              <label name="" class="size-label">34
+                <input type="checkbox" id="check34" name="size" class="size-checkbox" value="34">
+                <span class="checkmark"></span>
+              </label>
+
+              <label name="" class="size-label">36
+                <input type="checkbox" id="check36" name="size" class="size-checkbox" value="36">
+                <span class="checkmark"></span>
+              </label>
+
+              <label name="" class="size-label">38
+                <input type="checkbox" id="check38" name="size" class="size-checkbox" value="38">
+                <span class="checkmark"></span>
+              </label>
+              <div id="size-error"></div>
+
+            </div>
+
+
+            <div class="input">
+                <input type="text" id="image" class="form-input" name="image" placeholder="Image URL"><br />
+                <div id="image-error"></div>
+            </div>
+
+            <div class="input">
+              <select name="category" id="category">
+                <option value="Default">Select Category</option>
+                <option value="None">Uncategorised</option>
+                <option value="Men">Men</option>
+                <option value="Women">Women</option>
+                <option value="Children">Children</option>
+              </select>
+              <div id="category-error"></div>
+            </div>
+
+
+
+
+
+
+            <a href="#">
+                <input type="button" id="save-button" value="Save">
+            </a>
+          </form>
       </div>
-    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src = "/static/form-validate.js"></script>
+    <script src = "/static/form.js"></script>
   </body>
 </html>

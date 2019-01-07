@@ -12,24 +12,23 @@
                 <div class="individual-product">
                     <img src="{{ data.product.image }}" alt="" class="image">
                 </div>
-                <div id="product-info">
-
-                    {{ data.product.name }} <br />
-
-                    R {{'%0.2f' % data.product.price|float}}  <br />
-                    Sizes: {{ data.product.size }} <br />
-                    {{ data.product.category }} <br />
-
-                    <a href="#">
-                        <input type="button" id="buy" value="Buy">
-                    </a>
-
-                </div>
-
             </div>
 
         </div>
 
+        <div id="edit_box">
+
+            Name: {{ data.product.name }} <br />
+
+            Price: R {{'%0.2f' % data.product.price|float}}  <br />
+            Size: {{ data.product.size }} <br />
+            Category: {{ data.product.category }} <br />
+
+            <a href="/admin/edit/{{ data.product.key.id() }}/">
+                <input type="button" id="edit" value="Edit">
+            </a>
+
+        </div>
 
     </div>
 {% endblock %}

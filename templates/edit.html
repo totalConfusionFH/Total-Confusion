@@ -6,45 +6,77 @@
   </head>
   <body>
       <div id="main">
-
           <form name="info" method="post" action="http://localhost:8080/api/products/">
-              <input type="hidden" id="id" class="form_input" name="id" value="{{data.product.key.id()}}"><br />
+              <input type="hidden" id="id" class="form-input" name="id" value="{{data.product.key.id()}}"><br />
 
             <div class="input">
-                <input type="text" id="name" class="form_input" name="name" value="{{data.product.name}}"><br />
-                <div id="name_error"></div>
+                <input type="text" id="name" class="form-input" name="name" value="{{data.product.name}}"><br />
+                <div id="name-error"></div>
             </div>
 
             <div class="input">
-                <input type="text" id="price" class="form_input" name="price" value="{{data.product.price}}"><br />
-                <div id="price_error"></div>
+                <input type="text" id="price" class="form-input" name="price" value="{{data.product.price}}"><br />
+                <div id="price-error"></div>
             </div>
 
-            <div class="input">
-                <input type="text" id="size" class="form_input" name="size" value="{{data.product.size}}"><br />
-                <div id="size_error"></div>
-            </div>
 
             <div class="input">
-                <input type="text" id="image" class="form_input" name="image" value="{{data.product.image}}"><br />
-                <div id="image_error"></div>
+              <span class="select-size">Select available sizes:</span><br>
+
+              <label name="" class="size-label">28
+                <input type="checkbox" id="check28" name="size" class="size-checkbox" value="28" {% if 28 in data.product.size %}checked{% endif %}>
+                <span class="checkmark"></span>
+              </label>
+
+              <label name="" class="size-label">30
+                <input type="checkbox" id="check30" name="size" class="size-checkbox" value="30" {% if 30 in data.product.size %}checked{% endif %}>
+                <span class="checkmark"></span>
+              </label>
+
+              <label name="" class="size-label">32
+                <input type="checkbox" id="check32" name="size" class="size-checkbox" value="32" {% if 32 in data.product.size %}checked{% endif %}>
+                <span class="checkmark"></span>
+              </label>
+
+              <label name="" class="size-label">34
+                <input type="checkbox" id="check34" name="size" class="size-checkbox" value="34" {% if 34 in data.product.size %}checked{% endif %}>
+                <span class="checkmark"></span>
+              </label>
+
+              <label name="" class="size-label">36
+                <input type="checkbox" id="check36" name="size" class="size-checkbox" value="36" {% if 36 in data.product.size %}checked{% endif %}>
+                <span class="checkmark"></span>
+              </label>
+
+              <label name="" class="size-label">38
+                <input type="checkbox" id="check38" name="size" class="size-checkbox" value="38" {% if 38 in data.product.size %}checked{% endif %}>
+                <span class="checkmark"></span>
+              </label>
+              <div id="size-error"></div>
+
+            </div>
+
+
+            <div class="input">
+                <input type="text" id="image" class="form-input" name="image" value="{{data.product.image}}"><br />
+                <div id="image-error"></div>
             </div>
 
             <div class="input">
               <select name="category" id="category">
-                <option value={{data.product.category}} hidden>{{data.product.category}}</option>
+                <option value={{data.product.category}}>{{data.product.category}}</option>
                 <option value="None">Uncategorised</option>
                 <option value="Men">Men</option>
                 <option value="Women">Women</option>
                 <option value="Children">Children</option>
               </select>
-              <div id="category_error"></div>
+              <div id="category-error"></div>
             </div>
 
 
 
             <a href="/admin/edit/{{ data.product.key.id() }}/">
-                <input type="button" id="save_button" value="Save">
+                <input type="button" id="save-button" value="Save">
             </a>
           </form>
       </div>
